@@ -1,5 +1,5 @@
-enum SencerStatus {
-  Null,
-  Right,
-  Left,  
-};
+// enum SencerStatus {
+//   Null,
+//   Right,
+//   Left,  
+// };
