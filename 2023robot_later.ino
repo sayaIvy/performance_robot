@@ -1,7 +1,7 @@
 #include <Arduino.h>
 
+#include "Switch.h"
 
-const int DIN_PIN = 7;
 
 void setup(){
     pinMode( DIN_PIN, INPUT_PULLUP );
