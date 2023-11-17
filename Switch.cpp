@@ -9,7 +9,7 @@ Switch::Switch()
 
 Switch::Switch(int digit_pin)
 : value_(false) {
-  digit_pin_ = degit_pin;
+  digit_pin_ = digit_pin;
   pinMode( digit_pin_, INPUT_PULLUP );
   Serial.println("Swich constructor!");
 }
@@ -20,7 +20,7 @@ Switch::~Switch() {
   Serial.println("Switch destructor!");
 }
 
-bool Switch::GetValue(); {
+bool Switch::GetValue() {
   value_ = digitalRead( digit_pin_ );
   return value_;
 }

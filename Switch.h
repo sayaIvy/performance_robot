@@ -5,12 +5,12 @@
 class Switch {
 public:
 
-  Swich();
+  Switch();
 
   // <param> デジタルピンの番号
-  Swich(int digit_pin);
+  Switch(int digit_pin);
 
-  ~Swich();
+  ~Switch();
 
   bool GetValue();
 
@@ -18,6 +18,6 @@ public:
 private:
 
   int digit_pin_;
-  bool value_;
+  bool value_ = false;
 
-}
+};
