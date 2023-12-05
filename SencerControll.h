@@ -3,6 +3,7 @@
 #include <Arduino.h>
 #include "SencerStatus.h"
 
+// 廃止予定
 enum SencerStatus {
   Null,
   Right,

@@ -1,6 +1,7 @@
 #include <Arduino.h>
 
 #include "Switch.h"
+#include "LegController.h"
 
 #include <ArxContainer.h>
 
@@ -24,6 +25,8 @@ void setup() {
   switches.push_back(takt_switch6);
   switches.push_back(takt_switch7);
   switches.push_back(takt_switch8);
+
+  LegController Legs;
     
   Serial.begin( 115200 );
 }
@@ -40,6 +43,9 @@ void loop(){
   }    
 
     delay( 1000 );
+
+    LegController Legs;
+    Legs.walk2();
 }
 
 

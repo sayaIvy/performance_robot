@@ -21,6 +21,6 @@ Switch::~Switch() {
 }
 
 bool Switch::GetValue() {
-  value_ = digitalRead( digit_pin_ );
+  value_ = !digitalRead( digit_pin_ );
   return value_;
 }
