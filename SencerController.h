@@ -1,7 +1,6 @@
 #pragma once
 
 #include <Arduino.h>
-#include "SencerStatus.h"
 
 // 廃止予定
 enum SencerStatus {
@@ -19,12 +18,12 @@ namespace {
   float upper_distance = 75.0f;
 }
 
-class SencerControll {
+class SencerController {
 public:
 
-  SencerControll();
+  SencerController();
 
-  ~SencerControll();
+  ~SencerController();
 
   SencerStatus ReadSencer();
 

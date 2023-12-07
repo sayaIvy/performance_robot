@@ -1,51 +1,18 @@
 #include <Arduino.h>
 
-#include "Switch.h"
 #include "LegController.h"
+#include "SwitchColorStruct.h"
 
-#include <ArxContainer.h>
-
-  Switch takt_switch1(2);
-  Switch takt_switch2(3);
-  Switch takt_switch3(4);
-  Switch takt_switch4(5);
-  Switch takt_switch5(6);
-  Switch takt_switch6(7);
-  Switch takt_switch7(8);
-  Switch takt_switch8(9);
-
-  arx::vector<Switch> switches;
 
 void setup() {
-  switches.push_back(takt_switch1);
-  switches.push_back(takt_switch2);
-  switches.push_back(takt_switch3);
-  switches.push_back(takt_switch4);
-  switches.push_back(takt_switch5);
-  switches.push_back(takt_switch6);
-  switches.push_back(takt_switch7);
-  switches.push_back(takt_switch8);
-
   LegController Legs;
     
   Serial.begin( 115200 );
 }
 
 void loop(){
-  bool value;
-
-  for (int i = 0; i < 8; i++) {
-    value = switches[i].GetValue();
-    Serial.print("switch");
-    Serial.print(i);
-    Serial.print(": ");
-    Serial.println(value);
-  }    
-
-    delay( 1000 );
-
-    LegController Legs;
-    Legs.walk2();
+  LegController Legs;
+  Legs.walk2();
 }
 
 

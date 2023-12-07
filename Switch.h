@@ -2,6 +2,8 @@
 
 #include <Arduino.h>
 
+#include "SwitchColorStruct.h"
+
 class Switch {
 public:
 
@@ -12,8 +14,8 @@ public:
 
   ~Switch();
 
+  // テスト用、後で消す
   bool GetValue();
-
 
 private:
 

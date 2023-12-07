@@ -1,14 +1,14 @@
-#include "SencerControll.h"
+#include "SencerController.h"
 
-SencerControll::SencerControll() {
+SencerController::SencerController() {
   Serial.println("SencerConroll constructor!");
 }
 
-SencerControll::~SencerControll() {
+SencerController::~SencerController() {
   Serial.println("SencerConroll destructor!");
 }
 
-SencerStatus SencerControll::ReadSencer() {
+SencerStatus SencerController::ReadSencer() {
   // Serial.println("Left Sencer");
   if(MeasureDistance(US1_trigPin, US1_echoPin) < upper_distance) {
     return SencerStatus::Left;
@@ -25,7 +25,7 @@ SencerStatus SencerControll::ReadSencer() {
 }
 
 
-float SencerControll::MeasureDistance(int trigPin_, int echoPin_) {
+float SencerController::MeasureDistance(int trigPin_, int echoPin_) {
   float Duration = 0;  // 計測した時間
   float Distance = 0;  // 距離
 
