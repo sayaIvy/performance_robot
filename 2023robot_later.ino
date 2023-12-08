@@ -1,7 +1,6 @@
 #include <Arduino.h>
 
 #include "LegController.h"
-#include "SwitchColorStruct.h"
 
 
 void setup() {
@@ -12,7 +11,7 @@ void setup() {
 
 void loop(){
   LegController Legs;
-  Legs.walk2();
+  Legs.Walk();
 }
 
 

@@ -6,12 +6,14 @@
 #include "ServoMotor.h"
 #include "SimpleLegMovement.h"
 
+#include "SwitchController.h"
+
 
 namespace {
-  static const Leg leg0 = { 8, 9, 135, 92, 50, 90, 160 };
-  static const Leg leg1 = { 12, 13, 90, 45, 130, 90, 20 };
-  static const Leg leg2 = { 1, 0, 90, 130, 130, 90, 20 }; //hidariusiro
-  static const Leg leg3 = { 5, 4, 30, 84, 50, 90, 160 }; // hidarimae
+  static const Leg leg0 = { 8, 9, 135, 92, 190, 90, 50 };
+  static const Leg leg1 = { 12, 13, 90, 45, 20, 90, 130 };
+  static const Leg leg2 = { 1, 0, 90, 130, 20, 90, 130 }; //hidariusiro
+  static const Leg leg3 = { 5, 4, 30, 84, 190, 90, 50 }; // hidarimae
 }
 
 class LegController {
@@ -22,9 +24,9 @@ class LegController {
 
     void setup();
 
-    void walk();
+    void Walk();
 
-    void walk2();
+    void RadioController();
 
     void Test();
 
@@ -38,4 +40,6 @@ class LegController {
     arx::vector<Leg> legs;
 
     ServoMotor servo_control;
+
+    SimpleLegMovement simple_leg_movement;
 };

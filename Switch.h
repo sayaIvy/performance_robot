@@ -2,8 +2,6 @@
 
 #include <Arduino.h>
 
-#include "SwitchColorStruct.h"
-
 class Switch {
 public:
 
