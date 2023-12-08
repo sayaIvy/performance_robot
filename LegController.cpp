@@ -26,37 +26,7 @@ void LegController::setup() {
 
 void LegController::Walk() {
   // 足上げる 右前
-  int leg_num = 3;
-  servo_control.move(legs[leg_num].base_pin, legs[leg_num].base_back_angle);
-  servo_control.move(legs[leg_num].sub_pin, legs[leg_num].sub_up_angle);
-  delay(delay_time);
-  servo_control.move(legs[leg_num].base_pin, legs[leg_num].base_front_angle);
-  delay(delay_time);
-  servo_control.move(legs[leg_num].sub_pin, legs[leg_num].sub_down_angle);
-  delay(delay_time);
-
-  // 足上げる 左後ろ
-  leg_num = 0;
-  servo_control.move(legs[leg_num].base_pin, legs[leg_num].base_back_angle);
-  servo_control.move(legs[leg_num].sub_pin, legs[leg_num].sub_up_angle);
-  delay(delay_time);
-  servo_control.move(legs[leg_num].base_pin, legs[leg_num].base_front_angle);
-  delay(delay_time);
-  servo_control.move(legs[leg_num].sub_pin, legs[leg_num].sub_down_angle);
-  delay(delay_time);
-
-  // 足上げる 左前
-  leg_num = 2;
-  servo_control.move(legs[leg_num].base_pin, legs[leg_num].base_back_angle);
-  servo_control.move(legs[leg_num].sub_pin, legs[leg_num].sub_up_angle);
-  delay(delay_time);
-  servo_control.move(legs[leg_num].base_pin, legs[leg_num].base_front_angle);
-  delay(delay_time);
-  servo_control.move(legs[leg_num].sub_pin, legs[leg_num].sub_down_angle);
-  delay(delay_time);
-
-  // 足上げる 右後ろ
-  leg_num = 1;
+  int leg_num = 1;
   servo_control.move(legs[leg_num].base_pin, legs[leg_num].base_back_angle);
   servo_control.move(legs[leg_num].sub_pin, legs[leg_num].sub_up_angle);
   delay(delay_time);
@@ -68,6 +38,38 @@ void LegController::Walk() {
   for(int i = 0; i < legs.size(); i++) {
     servo_control.move(legs[i].base_pin, legs[i].base_back_angle);
   }
+
+  leg_num = 3; // 上げる左後ろ
+  servo_control.move(legs[leg_num].base_pin, legs[leg_num].base_back_angle);
+  servo_control.move(legs[leg_num].sub_pin, legs[leg_num].sub_up_angle);
+  delay(delay_time);
+  servo_control.move(legs[leg_num].base_pin, legs[leg_num].base_front_angle);
+  delay(delay_time);
+  servo_control.move(legs[leg_num].sub_pin, legs[leg_num].sub_down_angle);
+  delay(delay_time);
+
+  leg_num = 2; // 上げる左前
+  servo_control.move(legs[leg_num].base_pin, legs[leg_num].base_back_angle);
+  servo_control.move(legs[leg_num].sub_pin, legs[leg_num].sub_up_angle);
+  delay(delay_time);
+  servo_control.move(legs[leg_num].base_pin, legs[leg_num].base_front_angle);
+  delay(delay_time);
+  servo_control.move(legs[leg_num].sub_pin, legs[leg_num].sub_down_angle);
+  delay(delay_time);
+
+  for(int i = 0; i < legs.size(); i++) {
+    servo_control.move(legs[i].base_pin, legs[i].base_back_angle);
+  }
+
+  leg_num = 0; // 上げる左前
+  servo_control.move(legs[leg_num].base_pin, legs[leg_num].base_back_angle);
+  servo_control.move(legs[leg_num].sub_pin, legs[leg_num].sub_up_angle);
+  delay(delay_time);
+  servo_control.move(legs[leg_num].base_pin, legs[leg_num].base_front_angle);
+  delay(delay_time);
+  servo_control.move(legs[leg_num].sub_pin, legs[leg_num].sub_down_angle);
+  delay(delay_time);
+
 }
 
 void LegController::RadioController() {

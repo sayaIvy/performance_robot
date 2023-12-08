@@ -10,10 +10,10 @@
 
 
 namespace {
-  static const Leg leg0 = { 8, 9, 135, 92, 190, 90, 50 };
-  static const Leg leg1 = { 12, 13, 90, 45, 20, 90, 130 };
-  static const Leg leg2 = { 1, 0, 90, 130, 20, 90, 130 }; //hidariusiro
-  static const Leg leg3 = { 5, 4, 30, 84, 190, 90, 50 }; // hidarimae
+  static const Leg leg0 = { 1, 0, 68, 108, 50, 90, 130 }; //hidariusiro
+  static const Leg leg1 = { 5, 4, 11, 65, 150, 90, 10 }; // hidarimae
+  static const Leg leg2 = { 8, 9, 154, 111, 150, 90, 10 };
+  static const Leg leg3 = { 12, 13, 112, 67, 50, 90, 130 };
 }
 
 class LegController {
@@ -35,7 +35,7 @@ class LegController {
 
   private:
 
-    float delay_time = 250;
+    float delay_time = 280;
 
     arx::vector<Leg> legs;
 
