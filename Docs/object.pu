@@ -1,0 +1,140 @@
+@startuml object
+
+top to bottom direction
+
+class main {
+  + leg_controller: LegController
+  + pk_mover: PKMover
+  + speaker_controller: SpeakerController
+  + setup(): void
+  + loop(): void
+}
+
+struct Leg {
+  base_pin: int
+  sub_pin: int
+  base_front_angle: int
+  base_back_angle: int
+  sub_down_angle: int
+  sub_center_angle: int
+  sub_up_angle: int
+}
+
+class LegController {
+  - servo: ServoMotor
+  - legs: Leg[]
+  - delay_time: int
+  + simple_leg_movement: SimpleLegMovement
+  + Setup(): void
+  + Walk(): void
+  + RadioController(): void
+  + Test(): void
+}
+
+class SimpleLegMovement {
+  SimpleLegMovement(Leg[] legs); 
+  - FrontRightLeg: Leg
+  - FrontLeftLeg: Leg
+  - BackRightLeg: Leg
+  - BackLeftLeg: Leg
+  + RaiseFrontRight(): void
+  + RaiseFrontLeft(): void
+  + RaiseBackRight(): void
+  + RaiseBackLeft(): void
+  + LowerFrontRight(): void
+  + LowerFrontLeft(): void
+  + LowerBackRight(): void
+  + LowerBackLeft(): void
+}
+
+class ServoMotor {
+  - pin_: int
+  + ServoMotor(pin: int)
+  + move(pin: int, angle: int): void
+}
+
+class PKMover {
+  + ReleaseHand(): void
+}
+
+class UltrasonicSensor {
+  + ReadSenser(distance: float): bool
+  - US1_trigPin: int
+  - US1_echoPin: int
+  - US2_trigPin: int
+  - US2_echoPin: int
+  - upper_distance: float
+  - PringDistance: void
+  - MeasureDistance: float
+}
+
+struct Switches {
+  Red: bool
+  Blue: bool
+  Yellow: bool
+  Orange: bool
+  Green: bool
+  White: bool
+  Black: bool
+  Brown: bool
+}
+
+class Switch {
+  + switches: Switches
+  + GetValue(): bool
+}
+
+class SwitchController {
+  + ReadSenser(Switches& switches): void
+}
+
+class PiezoSpeaker {
+  + SoundNoteC(): void
+  + SoundNoteD(): void
+  + SoundNoteE(): void
+  + SoundNoteF(): void
+  + SoundNoteG(): void
+  + SoundNoteA(): void
+  + SoundNoteB(): void
+  + SoundNoteC2(): void
+  + SoundNoteC(int time): void
+  + SoundNoteD(int time): void
+  + SoundNoteE(int time): void
+  + SoundNoteF(int time): void
+  + SoundNoteG(int time): void
+  + SoundNoteA(int time): void
+  + SoundNoteB(int time): void
+  + SoundNoteC2(int time): void
+}
+
+class SpeakerController {
+  - switches: Switches
+  - piezo_speaker: PiezoSpeaker
+  + PlayPiano(): void
+}
+
+main -- LegController
+main -- PKMover
+main -- SpeakerController
+
+LegController -- Leg
+LegController -- SimpleLegMovement
+LegController -- ServoMotor
+LegController -- SwitchController
+
+SimpleLegMovement -- Leg
+SimpleLegMovement -- ServoMotor
+
+PKMover -- UltrasonicSensor
+PKMover -- SwitchController
+
+SpeakerController -- PiezoSpeaker
+SpeakerController -- SwitchController
+
+SwitchController -- Switch
+
+Switch -- Switches
+
+
+
+@enduml
